@@ -10,7 +10,7 @@
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 80,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 2000,
+                    "basic.to_if_alone_timeout_milliseconds": 3000,
                     "basic.to_if_held_down_threshold_milliseconds": 80,
                     "mouse_motion_to_scroll.speed": 100
                 },
@@ -20,7 +20,12 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "caps_lock"
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to_after_key_up": [
                                     {
@@ -30,11 +35,11 @@
                                         }
                                     }
                                 ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
+                                // "to_if_alone": [
+                                //     {
+                                //         "key_code": "caps_lock"
+                                //     }
+                                // ],
                                 "to_if_held_down": [
                                     {
                                         "set_variable": {
@@ -58,7 +63,11 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "volume_increment"
+                                        "key_code": "q",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -69,11 +78,7 @@
                                 },
                                 "to_if_alone": [
                                     {
-                                        "key_code": "q",
-                                        "modifiers": [
-                                            "left_control",
-                                            "left_command"
-                                        ]
+                                        "key_code": "volume_increment"
                                     }
                                 ],
                                 "type": "basic"
@@ -91,7 +96,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "volume_decrement"
+                                        "shell_command": "open -a Calendar"
                                     }
                                 ],
                                 "type": "basic"
@@ -102,7 +107,7 @@
                                 },
                                 "to_if_alone": [
                                     {
-                                        "shell_command": "open -a Calendar"
+                                        "key_code": "volume_decrement"
                                     }
                                 ],
                                 "type": "basic"
@@ -294,7 +299,12 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "u"
+                                    "key_code": "u",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -315,7 +325,12 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "o"
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -490,7 +505,7 @@
                                     {
                                         "key_code": "delete_or_backspace",
                                         "modifiers": [
-                                            "left_command"
+                                            "left_option"
                                         ]
                                     }
                                 ],
@@ -705,7 +720,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a trello.app"
+                                        "shell_command": "open -a iTerm.app"
                                     }
                                 ],
                                 "type": "basic"
@@ -795,9 +810,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
+                                        "key_code": "comma",
                                         "modifiers": [
-                                            "left_command",
                                             "left_shift"
                                         ]
                                     }
@@ -817,9 +831,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
+                                        "key_code": "period",
                                         "modifiers": [
-                                            "left_command"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -927,9 +941,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f1",
+                                        "key_code": "1",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -948,9 +962,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f2",
+                                        "key_code": "2",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -969,9 +983,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f3",
+                                        "key_code": "3",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -990,9 +1004,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f4",
+                                        "key_code": "4",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -1011,9 +1025,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f5",
+                                        "key_code": "5",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -1032,9 +1046,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f6",
+                                        "key_code": "6",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -1053,9 +1067,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f7",
+                                        "key_code": "7",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -1074,9 +1088,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f8",
+                                        "key_code": "8",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -1095,9 +1109,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f9",
+                                        "key_code": "9",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -1116,9 +1130,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f10",
+                                        "key_code": "0",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -1137,9 +1151,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f11",
+                                        "key_code": "hyphen",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -1158,9 +1172,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f12",
+                                        "key_code": "equal_sign",
                                         "modifiers": [
-                                            "fn"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -1184,10 +1198,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace"
-                                    },
-                                    {
-                                        "key_code": "vk_none"
+                                        "key_code": "semicolon",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1210,13 +1224,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace",
+                                        "key_code": "quote",
                                         "modifiers": [
-                                            "left_option"
+                                            "left_shift"
                                         ]
-                                    },
-                                    {
-                                        "key_code": "vk_none"
                                     }
                                 ],
                                 "type": "basic"
@@ -1234,7 +1245,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a iTerm.app"
+                                        "key_code": "slash",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1306,7 +1320,12 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "delete_or_backspace"
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -1315,6 +1334,9 @@
                                             "left_command",
                                             "left_shift"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "vk_none"
                                     }
                                 ],
                                 "type": "basic"
@@ -1350,9 +1372,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
+                                        "key_code": "open_bracket",
                                         "modifiers": [
-                                            "left_control",
                                             "left_shift"
                                         ]
                                     }
@@ -1372,9 +1393,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
+                                        "key_code": "close_bracket",
                                         "modifiers": [
-                                            "left_control"
+                                            "left_shift"
                                         ]
                                     }
                                 ],
@@ -1463,7 +1484,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -b com.apple.systempreferences /System/Library/PreferencePanes/Security.prefPane"
+                                        "key_code": "f18"
                                     }
                                 ],
                                 "type": "basic"
@@ -1633,7 +1654,7 @@
                     ]
                 }
             ],
-            "name": "Default profile",
+            "name": "Default",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },

@@ -1,6 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+
+
+#------------------------------------------------------------------------#
+# OHMYZSH
+#------------------------------------------------------------------------#
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -8,7 +16,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,9 +80,14 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos)
+# plugins=(git macos)
+plugins=(`#git` `#zsh-autosuggestions`)
+
 
 source $ZSH/oh-my-zsh.sh
+
+# 하이라이트
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -282,6 +297,11 @@ msa() {
 export DEV="/Users/cglee/Dev"
 
 #------------------------------------------------------------------------#
+# Docker 설정
+#------------------------------------------------------------------------#
+export DOCKER_HOST_IP=host.docker.internal
+
+#------------------------------------------------------------------------#
 # Kafka
 #------------------------------------------------------------------------#
 export KAFKA="$DEV/DevOps/msa/kafka_2.13-3.4.0"
@@ -323,4 +343,17 @@ else
     export INFOPATH="/usr/local/share/info:${INFOPATH:-}";
 fi
 
+#------------------------------------------------------------------------#
+# GIT 명령어 *git config --global core.pager cat
+#------------------------------------------------------------------------#
+glog() {
+    local page_number="${1:-1}"  # 페이지 번호를 첫 번째 인자로 받고, 기본값을 1로 설정합니다.
+    local page_count=50
+    local from_page=$(( (page_number - 1) * page_count + 1 ))
+    local to_page=$(( page_number * page_count ))
+    git log --pretty=format:"%h [%cr] %C(magenta)%cn%Creset : %s " --graph --abbrev-commit --no-merges "--skip=$from_page" "--max-count=$page_count"
+}
 
+gshow() {
+	open -a Fork .
+}

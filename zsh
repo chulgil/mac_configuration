@@ -362,3 +362,28 @@ glog() {
 gshow() {
 	open -a Fork .
 }
+
+#------------------------------------------------------------------------#
+# Text
+#------------------------------------------------------------------------#
+
+dot() {
+	figlet $1
+}
+
+
+#------------------------------------------------------------------------#
+# Utils
+#------------------------------------------------------------------------#
+
+OBSIDIAN_IMG="/Users/r00360/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/04.Archives/Attachment"
+imgopt() {
+	resize $OBSIDIAN_IMG
+	mycd $OBSIDIAN_IMG
+}
+
+resize() {
+	if [[ -n $1 ]]; then
+		magick mogrify -path $1  -resize 750 -define jpeg:extent=70KB *	
+  fi	
+}
